@@ -61,7 +61,7 @@ class Ofat():
 
         Returns
         -------
-        None.
+        forecasts.
 
         '''
         self.F = F
@@ -86,7 +86,7 @@ class Ofat():
 
         Returns
         -------
-        None.
+        flatterned vectors.
 
         '''
         #input channel 1
@@ -124,7 +124,7 @@ class Ofat():
         '''
         Returns
         -------
-        None.
+        predictions.
 
         '''
         lstm1= LSTM(128,
@@ -154,7 +154,7 @@ class Ofat():
         self.model = model
         self.history=history
 
-    def predict(self,X,y,mc=3):
+    def predict(self,X,y,F, mc=3):
         '''
 
         Parameters
@@ -164,7 +164,9 @@ class Ofat():
         y : TYPE
             DESCRIPTION.
         mc : TYPE, optional
-            DESCRIPTION. The default is 3.
+            DESCRIPTION. The default is 3.   
+        F : TYPE
+            DESCRIPTION
 
         Returns
         -------
@@ -173,7 +175,7 @@ class Ofat():
         '''
         #X = self.scaler.fit_transform(X.reshape(-1, X.shape[1]))
         X=X.reshape(-1,1,self.sequence_length,self.w)
-        self.x_test, self.y_test, = X,y
+        self.x_test, self.y_test, self.f_test= X,y,F
         self.ypred=np.array(self.model.predict([self.x_test,
                                                 self.x_test,
                                                 self.x_test], verbose=1)).reshape(3,-1)
