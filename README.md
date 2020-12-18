@@ -13,3 +13,23 @@ This file contains OFA implemetation algorithm
 1. Tensoflow 2
 2. Keras 2.3.1
 3. Python 3.6
+4. Matplotlib 3.1.2
+5. tqdm 4.44.1
+
+# Reference
+If you find this code useful in your research, please, consider citing our paper:
+```
+@ARTICLE{wamburakbs,
+	AUTHOR = "Stephen Wambura and Jianbin Huang and He Li",
+	TITLE = "Long-range Forecasting in Featute-evolving Data streams",
+	JOURNAL = {Elsevier, Knowledge Based Systems},
+	VOLUME = {206},
+	NUMBER = {106405},
+	PAGES = {},
+	YEAR = {2020},
+  }
+```
+# License
+OFA is distributed under Apache 2.0 license.
+
+Contact: Stephen Wambura (ceo@stephenwambura.com)
